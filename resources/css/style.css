@@ -45,6 +45,17 @@ body{
     max-width: 520px;
 }
 
+.section-copy-underline {
+    color: var(--color-lighter);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    max-width: 520px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 0.5px;
+    text-decoration-color: var(--color-dark);
+}
+
 .signal-panel {
     border-top: 1px solid var(--color-dark);
     border-bottom: 1px solid var(--color-dark);
@@ -98,13 +109,25 @@ body{
     color: var(--color-lighter);
 }
 
+.article-title {
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+.article-title:hover {
+    color: var(--color-light);
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 8px;
+}
+
 .editor {
     max-width: 100%;
 }
 
 .editor-form {
-    border-top: 1px solid var(--color-dark);
-    padding-top: 32px;
+    border-top: none;
+    padding-top: 0;
 }
 
 .label {
@@ -175,9 +198,94 @@ body{
     color: var(--color-darker);
 }
 
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-header {
+    padding-bottom: 80px;
+}
+
+.contact-success {
+    border: 1px solid var(--color-lighter);
+    color: var(--color-lighter);
+    font-size: 0.75rem;
+    padding: 14px 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.contact-column:first-child {
+    align-self: stretch;
+    border-right: 1px solid var(--color-dark);
+    padding-right: 64px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-button {
+    background-color: transparent;
+    border: 1px solid var(--color-dark);
+    color: var(--color-light);
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.contact-button:hover {
+    border-color: var(--color-lighter);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-photo {
+    border: 1px solid var(--color-dark);
+    border-radius: 50%;
+    height: 88px;
+    object-fit: cover;
+    width: 88px;
+}
+
 @media (max-width: 767px) {
     .articles-entry {
         margin-top: 64px;
+    }
+}
+
+@media (max-width: 991px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .contact-column:first-child {
+        border-bottom: 1px solid var(--color-dark);
+        border-right: 0;
+        padding-bottom: 48px;
+        padding-right: 0;
     }
 }
 

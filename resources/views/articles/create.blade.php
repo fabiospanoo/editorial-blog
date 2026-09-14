@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Scrivi un nuovo articolo">
     <main class="editor py-5">
         <p class="eyebrow mb-4">/ Nuova pubblicazione</p>
         <h1 class="section-title mb-3">Crea un articolo</h1>
@@ -27,7 +27,7 @@
 
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5">
                 <span class="hint">*Tutti i campi sono obbligatori.</span>
-                <button class="submit" type="submit">Pubblica articolo <span aria-hidden="true">-&gt;</span></button>
+                <button class="submit" type="submit">Pubblica articolo <i class="bi bi-arrow-right"></i></button>
             </div>
         </form>
     </main>

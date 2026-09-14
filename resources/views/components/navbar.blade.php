@@ -6,13 +6,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">/ Home</a>
+            <a class="nav-link {{ request()->routeIs('welcome') ? 'active' : '' }}" aria-current="page" href="{{ route('welcome') }}">/ Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('articles') }}">/ Articles</a>
+            <a class="nav-link {{ request()->routeIs('articles') || request()->routeIs('article.show') || request()->routeIs('articles.*') ? 'active' : '' }}" href="{{ route('articles') }}">/ Articles</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">/ Contacts</a>
+            <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">/ Contacts</a>
           </li>
         </ul>
       </div>

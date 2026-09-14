@@ -1,0 +1,40 @@
+.app-navbar {
+	background-color: var(--color-darker);
+    border-bottom: 1px solid var(--color-dark);
+	padding: 8px 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.app-navbar .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.app-navbar .nav-link {
+	color: var(--color-lighter);
+	padding: 4px 0;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link:focus {
+	color: var(--color-light);
+}
+
+.app-navbar .nav-link.active {
+	text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-light);
+    text-decoration-style: solid;
+}
+
+.app-navbar .navbar-toggler {
+	border-color: var(--color-lighter);
+}
+
+@media (min-width: 992px) {
+	.app-navbar .nav-link {
+		margin-left: 0.25rem;
+	}
+}

@@ -1,11 +1,11 @@
 <x-layout title="Mettiamoci in contatto">
     <main class="py-5">
-        <section class="contact-header" aria-labelledby="contact-title">
+        <section class="contact-header" aria-labelledby="contact-title" data-aos="fade-up">
             <p class="eyebrow mb-4">// Contatti</p>
             <h1 id="contact-title" class="section-title mb-3">Mettiamoci in contatto.</h1>
             <p class="section-copy mb-0">Raccontami la tua idea, rispondo appena posso.</p>
         </section>
-        <div class="contact-grid">
+        <div class="contact-grid" data-aos="fade-up" data-aos-delay="100">
             <section class="contact-column" aria-labelledby="profile-title">
                 <div class="profile">
                     <img class="profile-photo fixed" src="https://picsum.photos/600" alt="Foto di Fabio Spanò">

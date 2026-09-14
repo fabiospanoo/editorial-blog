@@ -14,6 +14,9 @@
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">/ Contacts</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('secret') ? 'active' : '' }}" href="{{ route('secret') }}">/</a>
+          </li>
         </ul>
       </div>
     </div>

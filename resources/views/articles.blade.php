@@ -1,6 +1,6 @@
 <x-layout title="Tutti gli articoli">
     <main class="py-5">
-        <div class="d-flex flex-wrap align-items-end justify-content-between gap-4">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-4" data-aos="fade-up">
             <div>
                 <p class="eyebrow mb-4">// Archivio</p>
                 <h1 class="section-title mb-3">Articoli</h1>
@@ -8,7 +8,7 @@
             </div>
             <a class="articles-link" href="{{ route('articles.create') }}">Scrivi un articolo <i class="bi bi-arrow-right"></i></a>
         </div>
-        <div class="row g-4 mt-4">
+        <div class="row g-4 mt-4" data-aos="fade-up" data-aos-delay="100">
             @forelse ($articles as $article)
                 <div class="col-mg-12">
                     <div class="signal-panel pt-4 pb-4 h-100">

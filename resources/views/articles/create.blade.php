@@ -1,10 +1,12 @@
 <x-layout title="Scrivi un nuovo articolo">
     <main class="editor py-5">
-        <p class="eyebrow mb-4">/ Nuova pubblicazione</p>
-        <h1 class="section-title mb-3">Crea un articolo</h1>
-        <p class="section-copy mb-5">Dai una forma chiara alla tua prossima idea.</p>
+        <div data-aos="fade-up">
+            <p class="eyebrow mb-4">/ Nuova pubblicazione</p>
+            <h1 class="section-title mb-3">Crea un articolo</h1>
+            <p class="section-copy mb-5">Dai una forma chiara alla tua prossima idea.</p>
+        </div>
 
-        <form class="editor-form w-full" action="{{ route('articles.store') }}" method="post">
+        <form class="editor-form w-full" action="{{ route('articles.store') }}" method="post" data-aos="fade-up" data-aos-delay="100">
             @csrf
             <div class="row g-4">
                 <div class="col-md-8">

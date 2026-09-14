@@ -35,6 +35,11 @@ class PublicController extends Controller
         return view('contact');
     }
 
+    public function secret()
+    {
+        return view('secret');
+    }
+
     public function contactSend(Request $request)
     {
         $request->validate([

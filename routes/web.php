@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
 Route::get('/articles', [PublicController::class, 'articles'])->name('articles');
+Route::get('/secret', [PublicController::class, 'secret'])->name('secret');
 Route::get('/article/{article}', [PublicController::class, 'article'])->name('article.show');
 Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
 Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');

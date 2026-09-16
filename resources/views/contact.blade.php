@@ -50,7 +50,7 @@
                     </div>
                 </form>
                 <div class="contact-links mt-5">
-                    <a class="contact-button" href="https://github.com/fabispanoo" target="_blank" rel="noopener"><i class="bi bi-github me-2"></i>GitHub <i class="bi bi-arrow-right"></i></a>
+                    <a class="contact-button" href="https://github.com/fabiospanoo" target="_blank" rel="noopener"><i class="bi bi-github me-2"></i>GitHub <i class="bi bi-arrow-right"></i></a>
                     <a class="contact-button" href="#" target="_blank" rel="noopener"><i class="bi bi-linkedin me-2"></i>LinkedIn <i class="bi bi-arrow-right"></i></a>
                 </div>
             </section>

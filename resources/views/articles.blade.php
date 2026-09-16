@@ -10,15 +10,31 @@
         </div>
         <div class="row g-4 mt-4" data-aos="fade-up" data-aos-delay="100">
             @forelse ($articles as $article)
-                <div class="col-mg-12">
-                    <div class="signal-panel pt-4 pb-4 h-100">
-                        <p class="eyebrow">{{ $article->category }}</p>
-                        <h2 class="section-title mb-2"><a class="article-title" href="{{ route('article.show', $article) }}">{{ $article->title }}</a></h2>
-                        <p class="section-copy mb-0">{{ Str::limit($article->content, 120) }}</p>
-                        <p class="eyebrow mt-3 mb-0">{{ $article->author }} · {{ $article->created_at->diffForHumans() }}</p>
+                @if ($article->img == null)
+                    <div class="col-mg-12">
+                        <div class="signal-panel pt-4 pb-4 h-100">
+                            <p class="eyebrow">{{ $article->category }}</p>
+                            <h2 class="section-title mb-2"><a class="article-title" href="{{ route('article.show', $article) }}">{{ $article->title }}</a></h2>
+                            <p class="section-copy mb-0">{{ Str::limit($article->content, 120) }}</p>
+                            <p class="eyebrow mt-3 mb-0">{{ $article->author }} · {{ $article->created_at->diffForHumans() }}</p>
+                        </div>
                     </div>
-                </div>
-            @empty
+                @else
+                    <div class="col-mg-12">
+                        <div class="row signal-panel pt-4 pb-4 h-100">
+                            <div class="col-md-8">
+                            <p class="eyebrow">{{ $article->category }}</p>
+                            <h2 class="section-title mb-2"><a class="article-title" href="{{ route('article.show', $article) }}">{{ $article->title }}</a></h2>
+                            <p class="section-copy mb-0">{{ Str::limit($article->content, 120) }}</p>
+                            <p class="eyebrow mt-3 mb-0">{{ $article->author }} · {{ $article->created_at->diffForHumans() }}</p>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-center">
+                                <img class="article-image mt-3 justify-content-end" src="{{ asset('storage/' . $article->img) }}" alt="Immagine dell'articolo {{ $article->title }}">
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                @empty
                 <p class="section-copy">Nessun articolo disponibile.</p>
             @endforelse
         </div>

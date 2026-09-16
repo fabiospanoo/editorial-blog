@@ -8,8 +8,15 @@
             </div>
             <a class="articles-link" href="{{ route('articles') }}"><i class="bi bi-arrow-left"></i> Torna agli articoli</a>
         </div>
-        <div class="signal-panel pt-4 pb-4 mt-5" data-aos="fade-up" data-aos-delay="100">
-            <p>{{ $article->content }}</p>
+        <div class="row signal-panel pt-4 pb-4 mt-5 align-items-start" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-md-8">
+                <p>{!! nl2br(e($article->content)) !!}</p>
+            </div>
+            @if ($article->img)
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img class="article-show-image" src="{{ asset('storage/' . $article->img) }}" alt="Immagine dell'articolo {{ $article->title }}">
+                </div>
+            @endif
         </div>
     </main>
 </x-layout>

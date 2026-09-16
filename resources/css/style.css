@@ -121,6 +121,22 @@ body{
     text-underline-offset: 8px;
 }
 
+.article-show-image {
+    width: 100%;
+    max-width: 700px;
+    max-height: 700px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.article-image {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 .editor {
     max-width: 100%;
 }
@@ -269,13 +285,18 @@ body{
     width: 88px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 760px) {
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .articles-entry {
         margin-top: 64px;
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 990px) {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 48px;

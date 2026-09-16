@@ -6,7 +6,7 @@
             <p class="section-copy mb-5">Dai una forma chiara alla tua prossima idea.</p>
         </div>
 
-        <form class="editor-form w-full" action="{{ route('articles.store') }}" method="post" data-aos="fade-up" data-aos-delay="100">
+        <form class="editor-form w-full" action="{{ route('articles.store') }}" method="post" data-aos="fade-up" data-aos-delay="100" enctype="multipart/form-data">
             @csrf
             <div class="row g-4">
                 <div class="col-md-8">
@@ -25,10 +25,14 @@
                     <label class="label" for="content">Testo</label>
                     <textarea class="input textarea" id="content" name="content" rows="12" placeholder="Scrivi qui il tuo articolo" required></textarea>
                 </div>
+                <div class="col-12">
+                    <label class="label" for="image">Immagine</label>
+                    <input class="input" type="file" id="image" name="img" accept="image/*">
+                </div>
             </div>
 
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5">
-                <span class="hint">*Tutti i campi sono obbligatori.</span>
+                <span class="hint">*Solo titolo, nome, categoria e testo sono obbligatori.</span>
                 <button class="submit" type="submit">Pubblica articolo <i class="bi bi-arrow-right"></i></button>
             </div>
         </form>

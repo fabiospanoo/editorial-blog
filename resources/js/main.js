@@ -38,9 +38,16 @@ if (mask) {
         "( You received an Egg. )"
     ];
     
-    let state = 0; // Gestisce sia l'indice della frase che le fasi finali
+    let state = 0; 
     let typingTimer = null;
-    let isTyping = false; // Novità: traccia se sta ancora scrivendo
+    let isTyping = false; 
+
+    function safePlay(el) {
+        if (!el) return;
+        el.play().catch((err) => {
+            console.error('Errore riproduzione audio:', err);
+        });
+    }
 
     function playFadeUp() {
         wrapper.classList.remove('fade-up');
@@ -65,46 +72,51 @@ if (mask) {
         }, 70);
     }
 
-    // Tenta l'autoplay (potrebbe essere bloccato dal browser)
-    if (audio) audio.play().catch(() => {});
+    // Tenta di avviare la musica all'ingresso della pagina
+    // (il browser potrebbe bloccarlo finché l'utente non interagisce)
+    if (audio) {
+        audio.volume = 1;
+        audio.muted = false;
+        safePlay(audio);
+    }
 
-    mask.addEventListener('click', () => {
-        // Avvia l'audio se era stato bloccato in precedenza
+    // MODIFICA QUI: document invece di mask
+    document.addEventListener('click', () => {
         if (state < 3 && audio && audio.paused) {
-            audio.play().catch(() => {});
+            audio.volume = 1;
+            audio.muted = false;
+            safePlay(audio);
         }
 
-        // Se sta scrivendo, completa la frase istantaneamente
         if (isTyping) {
             clearInterval(typingTimer);
             dialogBody.textContent = sentences[state - 1];
             isTyping = false;
-            return; // Ferma l'esecuzione qui, aspetta il prossimo click
+            return; 
         }
 
-        // Macchina a stati semplificata
         if (state < 3) {
-            // Scrive le frasi (0, 1, 2)
             typeSentence(sentences[state]);
             state++;
         } else if (state === 3) {
-            // Nasconde tutto
             mask.style.opacity = '0';
             dialogBody.style.opacity = '0';
             if (audio) {
                 audio.pause();
                 audio.currentTime = 0;
             }
-            state++;
-        } else if (state === 4) {
-            // Rivela il segreto
-            mask.src = secret;
-            mask.style.opacity = '1';
-            playFadeUp();
-            if (audio2 && audio2.paused) {
-                audio2.play().catch(() => {});
-            }
-            state++;
+            state++; 
+            
+            setTimeout(() => {
+                mask.src = secret;
+                mask.style.opacity = '1';
+                playFadeUp();
+                if (audio2) {
+                    audio2.volume = 1;
+                    audio2.muted = false;
+                    safePlay(audio2);
+                }
+            }, 1500); 
         }
     });
 }

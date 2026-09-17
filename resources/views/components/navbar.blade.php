@@ -14,6 +14,23 @@
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">/ Contacts</a>
           </li>
+          @auth
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">/ Logout</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </li>
+          @endauth
+          @guest
+            <li class="nav-item">
+              <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">/ Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}" href="{{ route('register') }}">/ Register</a>
+            </li>
+          @endguest
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('secret') ? 'active' : '' }}" href="{{ route('secret') }}">/</a>
           </li>

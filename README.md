@@ -1,4 +1,4 @@
-# fabio_spano_progetto_articoli
+# blog-editoriale
 
 ![Screenshot dell'applicazione](screenshot/home.png)
 
@@ -9,7 +9,7 @@ Blog editoriale multi-pagina costruito attraverso un classico flusso server-side
 ![Homepage](screenshot/home.png)
 ![Lista articoli](screenshot/articles.png)
 ![Pagina contatti](screenshot/contact.png)
-![Struttura del progetto](screenshot/tree.png)
+![Segreto](screenshot/tree.png)
 
 ## Installazione e avvio
 
